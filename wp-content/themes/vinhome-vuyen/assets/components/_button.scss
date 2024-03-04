@@ -1,0 +1,32 @@
+.lav-btn {
+	&.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px 24px;
+		height: 45px;
+		border: 0;
+		border-radius: 0;
+		text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 500;
+		background-image: none;
+		&-primary{
+			background-color: var(--Primary-Color, #162b75);
+			color: var(--White-Color, #fff);
+			&:hover {
+				background-color: #20378d;
+			}
+		}
+		&-secondary {
+			background-color: var(--Accent-Color, #dca447);
+			color: var(--White-Color, #fff);
+			&:hover {
+				background-color: #ebb154;
+			}
+		}
+		&-lg{
+			height: 60px;
+		}
+	}
+}

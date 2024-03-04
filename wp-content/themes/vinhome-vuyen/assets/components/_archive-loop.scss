@@ -1,0 +1,43 @@
+.lav-archive-loop {
+	padding-bottom: 100px;
+	.row {
+		--bs-gutter-x: 60px;
+		--bs-gutter-y: 60px;
+		@media (max-width: 1199px) {
+			--bs-gutter-x: 40px;
+			--bs-gutter-y: 40px;
+		}
+		@media (max-width: 991px) {
+			--bs-gutter-x: 30px;
+			--bs-gutter-y: 30px;
+		}
+	}
+	&-pagination {
+		padding-top: 80px;
+		.nav-links {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			column-gap: 10px;
+			.page-numbers {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				white-space: nowrap;
+				padding: 10px 24px;
+				background-color: var(--Bg-Secondary-Color, #f5f1e6);
+				color: var(--Primary-Text-Color, #222);
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 150%; /* 24px */
+				&.current {
+					background-color: var(--Primary-Color, #162b75);
+					color: var(--White-Color, #ffffff);
+				}
+				&a{
+					color: var(--Primary-Color, #162b75);
+				}
+			}
+		}
+	}
+}

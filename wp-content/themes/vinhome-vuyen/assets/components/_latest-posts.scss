@@ -1,0 +1,31 @@
+.lav-latest-posts {
+	padding: 100px 0 120px;
+	&-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+        justify-content: space-between;
+		gap: 16px;
+		margin-bottom: 16px;
+		h4 {
+			color: var(--Primary-Color, #162b75);
+			font-family: 'EB Garamond';
+			font-size: 36px;
+			font-weight: 500;
+			line-height: 150%; /* 54px */
+			text-transform: uppercase;
+			margin-bottom: 0;
+		}
+		a {
+			color: var(--Primary-Color, #162b75);
+			font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            column-gap: 16px;
+            transition: all ease-in-out .3s;
+            &:hover{
+                color: var(--Accent-Color, #dca447);
+            }
+		}
+	}
+}
