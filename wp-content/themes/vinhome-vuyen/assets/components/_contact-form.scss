@@ -7,6 +7,10 @@
 		height: 100%;
 		top: 0;
 		right: 0;
+
+		@media only screen and (max-width: 991px) {
+			position: unset;
+		}
 	}
 	&-inner {
 		padding: 90px 0 60px;
@@ -46,5 +50,9 @@
         .btn{
             margin-top: 20px;
         }
+
+		@media only screen and (max-width: 991px) {
+			padding: 32px 0;
+		}
 	}
 }
