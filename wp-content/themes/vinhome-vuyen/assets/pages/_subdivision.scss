@@ -7,7 +7,9 @@
 
 			.row-cols-1 {
 				row-gap: 60px;
-
+				@media (max-width: 768px) {
+					row-gap: 24px;
+				}
 				.col {
 					.lav-subdivision-item {
 						display: flex;
