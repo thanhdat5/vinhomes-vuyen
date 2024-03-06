@@ -1,0 +1,55 @@
+.lav-amenities {
+	padding: 0px;
+	.lav-page-body {
+		padding: 0px;
+		.container {
+			.lav-amenities-list {
+				.col {
+					.lav-amenities-item {
+						padding: 0px;
+						width: 100%;
+						margin-bottom: 40px;
+						.lav-amenities-item-img {
+							padding-bottom: 10px;
+							img {
+								height: 240px;
+								width: 100%;
+
+								@media only screen and (max-width: 1200px) {
+									height: 222px;
+								}
+
+								@media only screen and (max-width: 992px) {
+									height: 210px;
+								}
+
+								@media only screen and (max-width: 992px) {
+									height: 323px;
+								}
+							}
+						}
+						.lav-amenities-item-title a {
+							color: #162b75;
+							font-family: 'EB Garamond';
+							font-size: 24px;
+							font-style: normal;
+							font-weight: 500;
+							line-height: 150%; /* 36px */
+							text-transform: uppercase;
+							flex-wrap: wrap;
+							display: flex;
+						}
+
+						@media only screen and (max-width: 992px) {
+							margin-bottom: 32px;;
+						}
+
+						@media only screen and (max-width: 768px) {
+							margin-bottom: 24px;;
+						}
+					}
+				}
+			}
+		}
+	}
+}

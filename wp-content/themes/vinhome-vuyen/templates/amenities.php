@@ -1,3 +1,4 @@
+
 <?php
 
 /**
@@ -36,42 +37,54 @@ $post_type = get_field('post_type_slug');
     <div class="lav-page-body">
         <div class="container">
             <!-- Items list -->
-            <div class="row">
-                <?php
-                $posts = get_posts(array(
-                    'post_type'         => $post_type,
-                    'posts_per_page'    => -1,
-                    'meta_key'          => 'order_no',
-                    'orderby'           => 'meta_value',
-                    'order'             => 'ASC'
-                ));
-                if ($posts) : ?>
-                    <div>
-                        <?php foreach ($posts as $post) :
-                            setup_postdata($post)
-                        ?>
-                            <!-- TODO -->
-                            <div class="lav-amenities-item">
-                                <!-- Image -->
-                                <?php
-                                $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
-                                ?>
-                                <img height="200" src="<?php echo $image_url; ?>" alt="" />
+           
+            <div class="row lav-amenities-list">
+              
+                    <?php
+                    $posts = get_posts(array(
+                        'post_type'         => $post_type,
+                        'posts_per_page'    => -1,
+                        'meta_key'          => 'order_no',
+                        'orderby'           => 'meta_value',
+                        'order'             => 'ASC'
+                    ));
+                    if ($posts) : ?>
+                        
+                            <?php foreach ($posts as $post) :
+                                setup_postdata($post)
+                            ?>
+                                <!-- TODO -->
+                               
+                                <div class="col col-xl-4 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="lav-amenities-item">
+                                        <!-- Image -->                                
+                                        <div class="lav-amenities-item-img">
+                                            <?php
+                                            $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
+                                            ?>
+                                            <img src="<?php echo $image_url; ?>" alt="" />
+                                        </div>
+                                        <!-- Link | Title | Date -->
+                                        <div class="lav-amenities-item-title"> 
+                                            <a href="<?php the_permalink($post->id); ?>">
+                                            <?php echo get_the_title($post->id); ?> 
+                                            
+                                            </a>
+                                        </div>
 
-                                <!-- Link | Title | Date -->
-                                <a href="<?php the_permalink($post->id); ?>">
-                                    <?php echo get_the_title($post->id); ?> - <span><?php echo get_the_date($post->id); ?></span>
-                                </a>
-
-                                <!-- Content -->
-                                <?php the_content($post->id); ?>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
+                                    </div>
+                                </div>
+                                
+                            
+                            <?php endforeach; ?>
+                        
+                        <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                <!-- </div> -->
             </div>
+           <!-- end -->
         </div>
+
     </div>
 </div>
 <?php
