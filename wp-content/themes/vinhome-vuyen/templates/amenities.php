@@ -37,9 +37,9 @@ $post_type = get_field('post_type_slug');
     <div class="lav-page-body">
         <div class="container">
             <!-- Items list -->
-            <!-- lav-amenities-card -->
-            <div class="row ">
-                <!-- <div class="lav-amenities-card"> -->
+           
+            <div class="row lav-amenities-list">
+              
                     <?php
                     $posts = get_posts(array(
                         'post_type'         => $post_type,
@@ -54,8 +54,8 @@ $post_type = get_field('post_type_slug');
                                 setup_postdata($post)
                             ?>
                                 <!-- TODO -->
-                                <!-- lav-amenities-item -->
-                                <div class="col p-0">
+                               
+                                <div class="col col-xl-4 col-md-6 col-sm-12 col-xs-12">
                                     <div class="lav-amenities-item">
                                         <!-- Image -->                                
                                         <div class="lav-amenities-item-img">
@@ -84,6 +84,7 @@ $post_type = get_field('post_type_slug');
             </div>
            <!-- end -->
         </div>
+
     </div>
 </div>
 <?php
