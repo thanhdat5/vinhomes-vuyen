@@ -1,0 +1,134 @@
+.lav-contact {
+	.lav-contact-body {
+		padding-top: 80px;
+		margin-bottom: 100px;
+		.container {
+			.row {
+				.col-lg-6 {
+					div {
+						form {
+							.lav-form-contact {
+								h3 {
+									color: #162b75;
+									font-family: 'EB Garamond';
+									font-size: 32px;
+									font-style: normal;
+									font-weight: 500;
+									line-height: 150%; /* 48px */
+									letter-spacing: -0.64px;
+									text-transform: uppercase;
+									margin-bottom: 16px;
+								}
+								p {
+									color: #222;
+									font-family: Montserrat;
+									font-size: 16px;
+									font-style: normal;
+									font-weight: 400;
+									line-height: 150%; /* 24px */
+									margin-bottom: 40px;
+
+									&:last-of-type {
+										display: flex;
+										.lav-btn {
+											background: #162b75;
+											display: flex;
+											padding: 10px 40px;
+											justify-content: center;
+											align-items: center;
+											gap: 10px;
+											color: #fff;
+											font-family: Montserrat;
+											font-size: 14px;
+											font-style: normal;
+											font-weight: 500;
+											line-height: 150%; /* 21px */
+											letter-spacing: -0.28px;
+											text-transform: uppercase;
+										}
+									}
+								}
+
+								.form-group p {
+									margin-bottom: 20px;
+									span {
+										width: 100%;
+										input {
+											display: flex;
+											height: 60px;
+											padding: 16px 24px;
+											flex-direction: column;
+											justify-content: center;
+											align-items: flex-start;
+											align-self: stretch;
+											border: 1px solid #dca447;
+										}
+									}
+								}
+								.lav-btn {
+									margin-top: 20px;
+									@media (max-width: 1200px) {
+										margin-top: 14px;
+									}
+									@media (max-width: 992px) {
+										margin-top: 10px;
+									}
+									@media (max-width: 768px) {
+										margin-top: 6px;
+									}
+								}
+							}
+						}
+					}
+
+					h3 {
+						color: #162b75;
+						font-family: 'EB Garamond';
+						font-size: 32px;
+						font-style: normal;
+						font-weight: 500;
+						line-height: 150%; /* 48px */
+						letter-spacing: -0.64px;
+						text-transform: uppercase;
+						margin-bottom: 16px;
+					}
+					p {
+						color: #222;
+						font-family: Montserrat;
+						font-size: 16px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 150%; /* 24px */
+						margin-bottom: 40px;
+					}
+					.lav-contact-info {
+						margin-bottom: 16px;
+						display: flex;
+						align-items: flex-start;
+						gap: 10px;
+						span,
+						a {
+							color: #222;
+							font-family: Montserrat;
+							font-size: 16px;
+							font-style: normal;
+							font-weight: 400;
+							line-height: 150%; /* 24px */
+						}
+
+						&.lav-phone {
+							a {
+								color: #dca447;
+								font-family: Montserrat;
+								font-size: 16px;
+								font-style: normal;
+								font-weight: 600;
+								line-height: 150%; /* 24px */
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
