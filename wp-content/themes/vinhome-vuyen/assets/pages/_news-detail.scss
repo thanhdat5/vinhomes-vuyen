@@ -15,6 +15,7 @@
 			&:hover {
 				color: #162b75;
 				font-weight: 500;
+				opacity: 0.8;
 			}
 		}
 
@@ -58,6 +59,7 @@
 					&:hover {
 						color: #162b75;
 						font-weight: 500;
+						opacity: 0.8;
 					}
 				}
 			}
@@ -72,5 +74,9 @@
 				}
 			}
 		}
+	}
+
+	@media screen and (max-width: 992px) {
+		padding-top: 32px;
 	}
 }
