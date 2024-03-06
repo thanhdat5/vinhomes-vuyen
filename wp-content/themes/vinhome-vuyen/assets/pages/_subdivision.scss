@@ -54,6 +54,11 @@
 							font-weight: 500;
 							line-height: 150%; /* 36px */
 							text-transform: uppercase;
+							transition: all ease-in-out 0.3s;
+
+							&:hover {
+								color: #dca447;
+							}
 						}
 					}
 				}
