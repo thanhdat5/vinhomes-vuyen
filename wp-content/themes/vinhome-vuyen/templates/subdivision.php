@@ -50,7 +50,7 @@ $post_type = get_field('post_type_slug');
                             setup_postdata($post)
                         ?>
                             <!-- TODO -->
-                            <div class="col col-xl-6 col-sm-12">
+                            <div class="col col-md-6 col-sm-12">
                                 <div class="lav-subdivision-item">
                                     <!-- Image -->
                                     <?php
