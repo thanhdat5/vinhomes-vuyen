@@ -28,4 +28,12 @@
             }
 		}
 	}
+
+	@media (max-width: 992px) {
+		padding: 60px 0px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 32px 0px;
+	}
 }
