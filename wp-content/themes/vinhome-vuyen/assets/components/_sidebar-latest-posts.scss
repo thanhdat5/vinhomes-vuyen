@@ -1,0 +1,57 @@
+.lav-sidebar-latest-posts {
+	.lav-post-item {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+		&-image {
+			min-width: 120px;
+			width: 120px;
+			height: 70px;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&-title {
+			margin-bottom: 4px;
+			a {
+				display: block;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-size: 16px;
+				font-weight: 600;
+				line-height: 150%; /* 21px */
+				color: var(--Primary-Text-Color, #222);
+				transition: all ease-in-out 0.3s;
+				height: calc(16px * 1.5 * 2);
+				&:hover {
+					color: var(--Accent-Color, #dca447);
+					// color: var(--Primary-Color, #162b75);
+				}
+			}
+		}
+		&-date {
+			display: flex;
+			align-items: center;
+			column-gap: 4px;
+			margin-bottom: 4px;
+			font-size: 14px;
+			opacity: 0.6;
+			svg,
+			img {
+				width: 12px;
+				min-width: 12px;
+				height: auto;
+			}
+		}
+	}
+}

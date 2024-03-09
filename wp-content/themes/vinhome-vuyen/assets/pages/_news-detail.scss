@@ -73,6 +73,16 @@
 					margin-bottom: 1rem;
 				}
 			}
+			.lav-post-body{
+				.addtoany_share_save_container {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					.addtoany_header{
+						margin-bottom: 0;
+					}
+				}
+			}
 		}
 	}
 

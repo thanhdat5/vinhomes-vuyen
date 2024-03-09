@@ -8,7 +8,7 @@
 
 get_header();
 $page_id = get_option('page_for_posts');
-$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
+$image = wp_get_attachment_image_src(get_post_thumbnail_id($page_id), 'full')[0];
 $page_title = get_the_title($page_id);
 ?>
 <div class="lav-page lav-news">

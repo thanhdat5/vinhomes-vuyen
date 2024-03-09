@@ -25,10 +25,10 @@ $map_embeded = get_theme_mod('lav_map', '');
     ?>
 
     <!-- Body -->
-    <div class="lav-contact-body">
+    <div class="lav-contact-body mb-4">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
+            <div class="row gx-lg-5">
+                <div class="col-lg-6 pe-lg-5">
                     <!-- Contact form -->
                     <?php the_content(); ?>
                 </div>

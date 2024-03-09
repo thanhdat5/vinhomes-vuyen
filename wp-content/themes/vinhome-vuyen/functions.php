@@ -233,30 +233,47 @@ function vinhome_vuyen_widgets_init() {
 		array(
 			'name'          => 'Primary Widget Area (Sidebar)',
 			'id'            => 'primary_widget_area',
+			'before_widget' => '<div class="lav-sidebar-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => 'Footer (Column 1)',
+			'id'            => 'footer_column_1_area',
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		)
 	);
-
-	// Area 2.
 	register_sidebar(
 		array(
-			'name'          => 'Secondary Widget Area (Header Navigation)',
-			'id'            => 'secondary_widget_area',
+			'name'          => 'Footer (Column 2)',
+			'id'            => 'footer_column_2_area',
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		)
 	);
-
-	// Area 3.
 	register_sidebar(
 		array(
-			'name'          => 'Third Widget Area (Footer)',
-			'id'            => 'third_widget_area',
+			'name'          => 'Footer (Column 3)',
+			'id'            => 'footer_column_3_area',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Footer (Column 4)',
+			'id'            => 'footer_column_4_area',
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '<h3 class="widget-title">',
@@ -324,7 +341,6 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	register_nav_menus(
 		array(
 			'main-menu'   => 'Main Navigation Menu',
-			'footer-menu' => 'Footer Menu',
 		)
 	);
 }

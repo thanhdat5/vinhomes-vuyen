@@ -227,15 +227,40 @@ body {
 main {
 	padding-top: 90px;
 }
-
+.lav-widget-title {
+	color: var(--Primary-Color, #162b75);
+	font-family: 'EB Garamond';
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 150%; /* 36px */
+	letter-spacing: -0.48px;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f5f1e6;
+	margin-bottom: 20px;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 150px;
+		height: 3px;
+		background-color: #162b75;
+	}
+}
 // Components
 @import './components/_button';
 @import './components/_header';
+@import './components/_footer';
 @import './components/_archive-item';
 @import './components/_archive-loop';
 @import './components/_latest-posts';
 @import './components/_page-banner';
 @import './components/_contact-form';
+@import './components/_sidebar';
+@import './components/_sidebar-latest-posts';
 
 // Pages
 .lav-page {

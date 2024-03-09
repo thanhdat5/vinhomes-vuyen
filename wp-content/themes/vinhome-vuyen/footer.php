@@ -1,47 +1,120 @@
 		</main><!-- /#main -->
-		<footer id="footer">
+		<footer id="footer" class="lav-footer">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<p><?php printf(esc_html__('&copy; %1$s %2$s. All rights reserved.', 'vinhome-vuyen'), wp_date('Y'), get_bloginfo('name', 'display')); ?></p>
-					</div>
-
-					<?php
-					if (has_nav_menu('footer-menu')) : // See function register_nav_menus() in functions.php
-						/*
-								Loading WordPress Custom Menu (theme_location) ... remove <div> <ul> containers and show only <li> items!!!
-								Menu name taken from functions.php!!! ... register_nav_menu( 'footer-menu', 'Footer Menu' );
-								!!! IMPORTANT: After adding all pages to the menu, don't forget to assign this menu to the Footer menu of "Theme locations" /wp-admin/nav-menus.php (on left side) ... Otherwise the themes will not know, which menu to use!!!
-							*/
-						wp_nav_menu(
-							array(
-								'container'       => 'nav',
-								'container_class' => 'col-md-6',
-								//'fallback_cb'     => 'WP_Bootstrap4_Navwalker_Footer::fallback',
-								'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
-								'theme_location'  => 'footer-menu',
-								'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
-							)
-						);
-					endif;
-
-					if (is_active_sidebar('third_widget_area')) :
-					?>
-						<div class="col-md-12">
+				<div class="lav-footer-widgets">
+					<div class="row">
+						<div class="col-xl-4 pe-lg-5">
 							<?php
-							dynamic_sidebar('third_widget_area');
-
-							if (current_user_can('manage_options')) :
+							if (is_active_sidebar('footer_column_1_area')) {
+								dynamic_sidebar('footer_column_1_area');
+							}
 							?>
-								<span class="edit-link"><a href="<?php echo esc_url(admin_url('widgets.php')); ?>" class="badge bg-secondary"><?php esc_html_e('Edit', 'vinhome-vuyen'); ?></a></span><!-- Show Edit Widget link -->
+							<!-- Address -->
 							<?php
-							endif;
+							$address = get_theme_mod('lav_address', '');
+							$email = get_theme_mod('lav_email', '');
+							$phone_1 = get_theme_mod('lav_phone_1', '');
+							$phone_2 = get_theme_mod('lav_phone_2', '');
+							if ($address) {
+							?>
+								<div class="lav-contact-info">
+									<svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M17.5 11.3333C17.5 17.1666 10 22.1666 10 22.1666C10 22.1666 2.5 17.1666 2.5 11.3333C2.5 9.34419 3.29018 7.43653 4.6967 6.03001C6.10322 4.62349 8.01088 3.83331 10 3.83331C11.9891 3.83331 13.8968 4.62349 15.3033 6.03001C16.7098 7.43653 17.5 9.34419 17.5 11.3333Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M10 13.8333C11.3807 13.8333 12.5 12.714 12.5 11.3333C12.5 9.9526 11.3807 8.83331 10 8.83331C8.61929 8.83331 7.5 9.9526 7.5 11.3333C7.5 12.714 8.61929 13.8333 10 13.8333Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									<span class="lav-contact-adress"><?php echo $address; ?></span>
+								</div>
+							<?php
+							} ?>
+
+							<!-- Email -->
+							<?php if ($email) {
+							?>
+								<div class="lav-contact-info">
+									<svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M3.33341 6.33331H16.6667C17.5834 6.33331 18.3334 7.08331 18.3334 7.99998V18C18.3334 18.9166 17.5834 19.6666 16.6667 19.6666H3.33341C2.41675 19.6666 1.66675 18.9166 1.66675 18V7.99998C1.66675 7.08331 2.41675 6.33331 3.33341 6.33331Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M18.3334 8L10.0001 13.8333L1.66675 8" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?>
+								</div>
+							<?php
+							} ?>
+
+							<!-- Phone -->
+							<?php if ($phone_1 || $phone_2) {
+							?>
+								<div class="lav-contact-info lav-phone">
+									<svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.3334 17.1V19.6C18.3344 19.8321 18.2868 20.0618 18.1939 20.2744C18.1009 20.4871 17.9645 20.678 17.7935 20.8349C17.6225 20.9918 17.4206 21.1112 17.2007 21.1856C16.9809 21.2599 16.7479 21.2875 16.5168 21.2666C13.9525 20.988 11.4893 20.1118 9.32511 18.7083C7.31163 17.4289 5.60455 15.7218 4.32511 13.7083C2.91676 11.5343 2.04031 9.05914 1.76677 6.48331C1.74595 6.25287 1.77334 6.02061 1.84719 5.80133C1.92105 5.58205 2.03975 5.38055 2.19575 5.20966C2.35174 5.03877 2.54161 4.90224 2.75327 4.80875C2.96492 4.71526 3.19372 4.66686 3.42511 4.66665H5.92511C6.32953 4.66267 6.7216 4.80588 7.02824 5.06959C7.33488 5.3333 7.53517 5.69952 7.59177 6.09998C7.69729 6.90003 7.89298 7.68558 8.17511 8.44165C8.28723 8.73992 8.31149 9.06407 8.24503 9.37571C8.17857 9.68735 8.02416 9.9734 7.80011 10.2L6.74177 11.2583C7.92807 13.3446 9.65549 15.072 11.7418 16.2583L12.8001 15.2C13.0267 14.9759 13.3127 14.8215 13.6244 14.7551C13.936 14.6886 14.2602 14.7129 14.5584 14.825C15.3145 15.1071 16.1001 15.3028 16.9001 15.4083C17.3049 15.4654 17.6746 15.6693 17.9389 15.9812C18.2032 16.2931 18.3436 16.6913 18.3334 17.1Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+									<span>
+										<?php if ($phone_1) {
+										?>
+											<a href="tel:<?php echo $phone_1; ?>"><?php echo $phone_1; ?> -</a>
+										<?php
+										} ?>
+
+										<?php if ($phone_2) {
+										?>
+											<a href="tel:<?php echo $phone_2; ?>"><?php echo $phone_2; ?></a>
+										<?php
+										} ?>
+									</span>
+								</div>
+							<?php
+							} ?>
+						</div>
+						<div class="col-xl-2">
+							<?php
+							if (is_active_sidebar('footer_column_2_area')) {
+								dynamic_sidebar('footer_column_2_area');
+							}
 							?>
 						</div>
-					<?php
-					endif;
-					?>
-				</div><!-- /.row -->
+						<div class="col-xl-3">
+							<?php
+							if (is_active_sidebar('footer_column_3_area')) {
+								dynamic_sidebar('footer_column_3_area');
+							}
+							?>
+						</div>
+						<div class="col-xl-3">
+							<?php
+							if (is_active_sidebar('footer_column_4_area')) {
+								dynamic_sidebar('footer_column_4_area');
+							}
+							?>
+						</div>
+					</div><!-- /.row -->
+				</div>
+
+				<div class="lav-footer-socials">
+					<div class="lav-footer-socials-list">
+						<a href="#" target="_blank" title="Facebook">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 12.0521C21 7.32877 17.1946 3.5 12.5011 3.5C7.8054 3.50106 4 7.32877 4 12.0531C4 16.3207 7.10849 19.8583 11.171 20.5V14.5242H9.01437V12.0531H11.1731V10.1674C11.1731 8.02462 12.4426 6.84115 14.3836 6.84115C15.3142 6.84115 16.2863 7.00794 16.2863 7.00794V9.11142H15.2143C14.1594 9.11142 13.8301 9.77115 13.8301 10.4479V12.0521H16.1864L15.8103 14.5231H13.829V20.4989C17.8915 19.8573 21 16.3196 21 12.0521Z" fill="currentColor" />
+							</svg>
+						</a>
+						<a href="#" target="_blank" title="Youtube">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M20.6243 7.97076C20.5219 7.58914 20.321 7.24113 20.0417 6.96155C19.7625 6.68197 19.4147 6.48063 19.0333 6.37768C17.629 6 12 6 12 6C12 6 6.37098 6 4.96674 6.37567C4.58509 6.47828 4.23715 6.67951 3.95787 6.95914C3.67859 7.23877 3.4778 7.58697 3.37567 7.96875C3 9.375 3 12.308 3 12.308C3 12.308 3 15.2411 3.37567 16.6453C3.58259 17.4208 4.1933 18.0315 4.96674 18.2384C6.37098 18.6161 12 18.6161 12 18.6161C12 18.6161 17.629 18.6161 19.0333 18.2384C19.8087 18.0315 20.4174 17.4208 20.6243 16.6453C21 15.2411 21 12.308 21 12.308C21 12.308 21 9.375 20.6243 7.97076ZM10.2121 15V9.61607L14.8728 12.2879L10.2121 15Z" fill="currentColor" />
+							</svg>
+						</a>
+						<a href="#" target="_blank" title="Instagram">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.998 9.3322C10.529 9.3322 9.3302 10.531 9.3302 12C9.3302 13.469 10.529 14.6678 11.998 14.6678C13.467 14.6678 14.6658 13.469 14.6658 12C14.6658 10.531 13.467 9.3322 11.998 9.3322ZM19.9994 12C19.9994 10.8953 20.0094 9.80051 19.9474 8.69777C19.8853 7.4169 19.5931 6.28014 18.6565 5.3435C17.7179 4.40487 16.5831 4.11467 15.3022 4.05263C14.1975 3.99059 13.1027 4.0006 12 4.0006C10.8953 4.0006 9.80051 3.99059 8.69777 4.05263C7.4169 4.11467 6.28014 4.40687 5.3435 5.3435C4.40487 6.28214 4.11467 7.4169 4.05263 8.69777C3.99059 9.80252 4.0006 10.8973 4.0006 12C4.0006 13.1027 3.99059 14.1995 4.05263 15.3022C4.11467 16.5831 4.40687 17.7199 5.3435 18.6565C6.28214 19.5951 7.4169 19.8853 8.69777 19.9474C9.80252 20.0094 10.8973 19.9994 12 19.9994C13.1047 19.9994 14.1995 20.0094 15.3022 19.9474C16.5831 19.8853 17.7199 19.5931 18.6565 18.6565C19.5951 17.7179 19.8853 16.5831 19.9474 15.3022C20.0114 14.1995 19.9994 13.1047 19.9994 12ZM11.998 16.1048C9.72646 16.1048 7.89323 14.2715 7.89323 12C7.89323 9.72847 9.72646 7.89523 11.998 7.89523C14.2695 7.89523 16.1028 9.72847 16.1028 12C16.1028 14.2715 14.2695 16.1048 11.998 16.1048ZM16.2709 8.68576C15.7405 8.68576 15.3122 8.25747 15.3122 7.72711C15.3122 7.19675 15.7405 6.76847 16.2709 6.76847C16.8012 6.76847 17.2295 7.19675 17.2295 7.72711C17.2297 7.85305 17.205 7.97778 17.1569 8.09416C17.1088 8.21054 17.0382 8.31628 16.9491 8.40533C16.8601 8.49438 16.7543 8.56499 16.6379 8.61311C16.5216 8.66123 16.3968 8.68592 16.2709 8.68576Z" fill="currentColor" />
+							</svg>
+						</a>
+						<a href="#" target="_blank" title="Twitter">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 5.83011C20.3381 6.13937 19.627 6.34834 18.8794 6.44279C19.6508 5.95615 20.2278 5.19024 20.503 4.28797C19.7783 4.74182 18.9851 5.06129 18.158 5.23248C17.6018 4.60631 16.8651 4.19128 16.0623 4.05182C15.2594 3.91235 14.4354 4.05626 13.7181 4.4612C13.0007 4.86614 12.4303 5.50945 12.0953 6.29125C11.7602 7.07306 11.6794 7.94962 11.8652 8.78484C10.3968 8.70711 8.96033 8.30469 7.64898 7.60371C6.33762 6.90272 5.18071 5.91885 4.25332 4.71592C3.93623 5.29266 3.7539 5.96134 3.7539 6.67348C3.75354 7.31458 3.90328 7.94585 4.18981 8.5113C4.47634 9.07674 4.89082 9.55887 5.39646 9.91491C4.81005 9.89524 4.23658 9.72817 3.72377 9.42761V9.47776C3.72371 10.3769 4.0187 11.2484 4.55868 11.9444C5.09865 12.6403 5.85036 13.1178 6.68625 13.2959C6.14226 13.4512 5.57192 13.474 5.01832 13.3628C5.25416 14.1365 5.71355 14.813 6.33219 15.2977C6.95082 15.7824 7.69772 16.051 8.46833 16.0659C7.16018 17.1487 5.54461 17.736 3.88153 17.7335C3.58693 17.7335 3.29258 17.7154 3 17.6791C4.68813 18.8236 6.65322 19.4309 8.66018 19.4286C15.454 19.4286 19.168 13.4957 19.168 8.3502C19.168 8.18303 19.164 8.01419 19.1569 7.84702C19.8793 7.29617 20.5029 6.61405 20.9984 5.83262L21 5.83011Z" fill="currentColor" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="lav-footer-copyright">
+					<?php printf(esc_html__('&copy;%1$s Bản quyền thuộc về %2$s.', 'vinhome-vuyen'), wp_date('Y'), get_bloginfo('name', 'display')); ?>
+				</div>
 			</div><!-- /.container -->
 		</footer><!-- /#footer -->
 		</div><!-- /#wrapper -->

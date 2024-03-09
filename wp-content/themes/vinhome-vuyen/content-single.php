@@ -42,7 +42,7 @@ $page_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
 								<path d="M8 4.66663V7.99996L10 9.99996" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
 							<span class="lav-post-date"><?php the_date(); ?></span>
-							<span>by</span>
+							<span><?php esc_html_e('đăng bởi', 'vinhome-vuyen'); ?></span>
 							<a class="lav-post-author" href="<?php echo esc_url(get_author_posts_url((int) get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
 						</div>
 						<div class="lav-post-excerpt"><?php the_excerpt(); ?></div>
@@ -53,6 +53,13 @@ $page_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
 					<?php get_sidebar(); ?>
 				</div>
 			</div>
+
+			<!-- Related posts -->
+			<?php
+			get_template_part('template-parts/component', 'related-posts', array(
+				'post_id' => get_the_ID()
+			));
+			?>
 		</div>
 	</div>
 </article><!-- /#post-<?php the_ID(); ?> -->
