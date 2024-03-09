@@ -10,7 +10,7 @@
 	}
 	&-item {
 		position: relative;
-
+        overflow: hidden;
 		&.last {
 			background: var(--Primary-Color, #162b75);
 			color: var(--White-Color, #fff);
@@ -18,6 +18,36 @@
 				color: var(--White-Color, #fff);
 			}
 		}
+
+        &::before {
+            background: linear-gradient(
+                to right,
+                fade_out(#fff, 1) 0%,
+                fade_out(#fff, 0.7) 100%
+            );
+            content: "";
+            display: block;
+            height: 100%;
+            left: -75%;
+            position: absolute;
+            top: 0;
+            transform: skewX(-25deg);
+            width: 50%;
+            z-index: 2;
+        }
+    
+        &:hover,
+        &:focus {
+            &::before {
+                animation: shine 0.85s;
+            }
+        }
+    
+        @keyframes shine {
+            100% {
+                left: 125%;
+            }
+        }
 
 		&-img {
 			position: absolute;
@@ -28,6 +58,8 @@
 			padding: 0;
 			outline: 1px solid white;
 			outline-offset: -20px;
+
+            
 
 			&.right {
 				right: 0;
