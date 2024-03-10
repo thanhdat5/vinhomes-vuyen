@@ -368,6 +368,7 @@ function vinhome_vuyen_scripts_loader() {
 
 	// 1. Styles.
 	wp_enqueue_style( 'style', get_theme_file_uri( 'style.css' ), array(), $theme_version, 'all' );
+	wp_enqueue_style( 'lightbox', get_theme_file_uri( 'assets/plugins/lightbox/css/lightbox.min.css' ), array(), $theme_version, 'all' ); 
 	wp_enqueue_style( 'aos', get_theme_file_uri( 'assets/plugins/aos/aos.css' ), array(), $theme_version, 'all' ); 
 	wp_enqueue_style( 'slick', get_theme_file_uri( 'assets/plugins/slick/slick.css' ), array(), $theme_version, 'all' ); 
 	wp_enqueue_style( 'slicktheme', get_theme_file_uri( 'assets/plugins/slick/slick-theme.css' ), array(), $theme_version, 'all' );
@@ -380,6 +381,7 @@ function vinhome_vuyen_scripts_loader() {
 	// 2. Scripts.
 	wp_enqueue_script( 'slickjs', get_theme_file_uri( 'assets/plugins/slick/slick.min.js' ), array(), $theme_version, true );
 	wp_enqueue_script( 'aosjs', get_theme_file_uri( 'assets/plugins/aos/aos.js' ), array(), $theme_version, true );
+	wp_enqueue_script( 'lightboxjs', get_theme_file_uri( 'assets/plugins/lightbox/js/lightbox.min.js' ), array(), $theme_version, true );
 	wp_enqueue_script( 'mainjs', get_theme_file_uri( 'build/main.js' ), array(), $theme_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'vinhome_vuyen_scripts_loader' );

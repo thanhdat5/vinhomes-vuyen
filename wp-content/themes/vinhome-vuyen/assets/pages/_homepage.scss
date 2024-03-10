@@ -27,25 +27,113 @@
 		overflow: hidden;
 		.slick-list {
 			padding: 0 !important;
-            margin-left: -60px;
-            margin-right: -60px;
+			margin-left: -60px;
+			margin-right: -60px;
 			img {
 				width: 100%;
-                height: 100%;
-                object-fit: cover;
+				height: 100%;
+				object-fit: cover;
 			}
 		}
 		.lav-about-slide-item {
-            opacity: .6;
-            transition: all ease-in-out .3s;
-            padding: 140px 0;
-            height: 550px;
-            &.slick-center {
-                opacity: 1;
-                transform: scale(2) !important;
-                position: relative;
-                z-index: 3;
-            }
+			opacity: 0.6;
+			transition: all ease-in-out 0.3s;
+			padding: 140px 0;
+			height: 550px;
+			&.slick-center {
+				opacity: 1;
+				transform: scale(2) !important;
+				position: relative;
+				z-index: 3;
+			}
 		}
+	}
+	&-sect {
+		padding: 80px 0;
+	}
+	&-title {
+		color: #162b75;
+		font-family: 'EB Garamond';
+		font-size: 40px;
+		font-weight: 500;
+		line-height: 150%;
+		text-transform: uppercase;
+		margin-bottom: 40px;
+	}
+	&-overview {
+		ul {
+			li {
+				padding: 6px 0;
+			}
+		}
+	}
+	&-location {
+		background-color: #162b75;
+		color: #fff;
+		.lav-homepage-title {
+			color: #fff;
+		}
+		ul {
+			li {
+				padding: 6px 0;
+			}
+		}
+		.gallery {
+			display: flex;
+			column-gap: 24px;
+			.gallery-item{
+				height: 250px;
+				overflow: hidden;
+				a,
+				.gallery-icon{
+					display: block;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+				}
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		.research-btn {
+			color: var(--White-Color, #fff);
+			font-family: Montserrat;
+			font-size: 13px;
+			font-weight: 500;
+			line-height: 150%; /* 19.5px */
+			text-transform: uppercase;
+			padding: 10px 24px;
+			background: var(--Accent-Color, #dca447);
+			display: inline-flex;
+			padding: 10px 24px;
+			justify-content: center;
+			align-items: center;
+			width: fit-content;
+
+			&:hover {
+				opacity: 0.8;
+				cursor: pointer;
+			}
+		}
+	}
+	&-amenities {
+		background-color: #fcfcfc;
+		.lav-page-body .container .lav-amenities-list .lav-amenities-item {
+			margin-bottom: 24px;
+			.lav-amenities-item-title {
+				font-family: Montserrat;
+				color: var(--Primary-Text-Color, #222);
+				font-size: 16px;
+				text-transform: none;
+				text-align: center;
+			}
+		}
+	}
+	&-subdivision {
+		background-color: #fcfcfc;
+		padding: 80px 0;
 	}
 }

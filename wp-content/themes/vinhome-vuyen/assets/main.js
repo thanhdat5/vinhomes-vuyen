@@ -10,7 +10,7 @@ function stickHeader() {
 	stickHeader();
 	$('.lav-banner-slideshow').slick({
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 4000,
 		arrows: true,
 		dots: true,
 		infinite: true,
@@ -18,6 +18,8 @@ function stickHeader() {
 		slidesToScroll: 1,
 	});
 	$('.lav-about-slideshow').slick({
+		autoplay: true,
+		autoplaySpeed: 2000,
 		centerMode: true,
 		centerPadding: '60px',
 		infinite: true,
