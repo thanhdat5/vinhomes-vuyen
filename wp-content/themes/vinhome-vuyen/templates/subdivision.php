@@ -56,7 +56,10 @@ $post_type = get_field('post_type_slug');
                                     <?php
                                     $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
                                     ?>
-                                    <img src="<?php echo $image_url; ?>" alt="" />
+                                    <div class="lav-subdivision-item-image">
+                                        <img src="<?php echo $image_url; ?>" alt="" />
+                                    </div>
+                                    
                                     
 
                                     <!-- Link | Title | Date -->
