@@ -1,0 +1,51 @@
+.lav-homepage {
+	margin-top: -90px;
+	.lav-banner-slideshow {
+		overflow: hidden;
+		.lav-banner-slide-item {
+			width: 100%;
+			height: 100vh;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			@media (max-width: 1199px) {
+				height: 600px;
+			}
+		}
+		.slick-dots {
+			bottom: 30px;
+			filter: invert(1);
+			li button:before {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.lav-about-slideshow {
+		overflow: hidden;
+		.slick-list {
+			padding: 0 !important;
+            margin-left: -60px;
+            margin-right: -60px;
+			img {
+				width: 100%;
+                height: 100%;
+                object-fit: cover;
+			}
+		}
+		.lav-about-slide-item {
+            opacity: .6;
+            transition: all ease-in-out .3s;
+            padding: 140px 0;
+            height: 550px;
+            &.slick-center {
+                opacity: 1;
+                transform: scale(2) !important;
+                position: relative;
+                z-index: 3;
+            }
+		}
+	}
+}

@@ -1,9 +1,34 @@
 // Webpack Imports
 import * as bootstrap from 'bootstrap';
-
+function stickHeader() {
+	const header = $('.lav-header');
+	const scroll = $(window).scrollTop();
+	if (scroll >= 100) header.addClass('lav-fixed');
+	else header.removeClass('lav-fixed');
+}
 (function ($) {
-	$('body').addClass('hiplab');
+	stickHeader();
+	$('.lav-banner-slideshow').slick({
+		autoplay: true,
+		autoplaySpeed: 2000,
+		arrows: true,
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	});
+	$('.lav-about-slideshow').slick({
+		centerMode: true,
+		centerPadding: '60px',
+		infinite: true,
+		slidesToScroll: 1,
+		slidesToShow: 3
+	  });
 })(jQuery);
+
+$(window).on('scroll', function () {
+	stickHeader();
+});
 
 (function () {
 	'use strict';

@@ -50,14 +50,10 @@ $post_type = get_field('post_type_slug');
                     'order' => 'ASC'
                 )
             );
-            if ($posts): ?>
-                <?php foreach ($posts as $index => $post):
+            if ($posts) : ?>
+                <?php foreach ($posts as $index => $post) :
                     setup_postdata($post)
-                        ?>
-                    <!-- TODO -->
-                    <?php
-                    ?>
-
+                ?>
                     <div class="lav-products-item <?php echo (count($posts) - 2 <= $index) ? 'last' : '' ?>">
                         <div class="container">
                             <div class="row equal">
@@ -66,14 +62,11 @@ $post_type = get_field('post_type_slug');
                                 $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
                                 ?>
 
-                                <div
-                                    class="col-12 col-md-6 lav-products-item-left <?php echo ($index % 2 != 0) ? 'odd' : '' ?>">
-                                    <img class="lav-products-item-img <?php echo ($index % 2 != 0) ? 'right' : '' ?>"
-                                        src="<?php echo $image_url; ?>" alt="" />
+                                <div class="col-12 col-md-6 lav-products-item-left <?php echo ($index % 2 != 0) ? 'odd' : '' ?>">
+                                    <img class="lav-products-item-img <?php echo ($index % 2 != 0) ? 'right' : '' ?>" src="<?php echo $image_url; ?>" alt="" />
                                 </div>
-                                <div
-                                    class="col-12 col-md-6 lav-products-item-right <?php echo ($index % 2 != 0) ? 'even' : '' ?>">
-                                    <a href="<?php the_permalink($post->id); ?>" class="lav-products-item-title">
+                                <div class="col-12 col-md-6 lav-products-item-right <?php echo ($index % 2 != 0) ? 'even' : '' ?>">
+                                    <a href="<?php echo get_field('detail_url'); ?>" class="lav-products-item-title">
                                         <?php echo get_the_title($post->id); ?>
                                         <!-- - <span><?php echo get_the_date($post->id); ?></span> -->
                                     </a>
@@ -84,7 +77,7 @@ $post_type = get_field('post_type_slug');
                                     </div>
 
                                     <div class="lav-products-item-bottom">
-                                        <a href="<?php the_permalink($post->id); ?>" class="research-btn">
+                                        <a href="<?php echo get_field('detail_url'); ?>" class="research-btn">
                                             <span>Tìm hiểu thêm</span>
                                         </a>
                                     </div>

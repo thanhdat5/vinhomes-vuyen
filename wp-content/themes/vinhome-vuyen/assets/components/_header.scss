@@ -7,14 +7,34 @@
 	left: 0;
 	width: 100%;
 	z-index: 995;
-	background-color: rgba($color: #fff, $alpha: 0.9);
 	backdrop-filter: blur(3px);
+	background-color: rgba($color: #fff, $alpha: 0.9);
 	border-bottom: 1px #e1e1e1 solid;
+	transition: all ease-in-out 0.3s;
+	&.lav-fixed {
+		.navbar {
+			.navbar-brand {
+				img {
+					max-height: 70px;
+				}
+			}
+			.nav-link {
+				height: 80px;
+				&::before {
+					bottom: -5px;
+				}
+			}
+		}
+	}
 	.navbar {
 		padding: 0;
 		width: 100%;
 		.navbar-brand {
 			padding: 0;
+			img {
+				max-height: 80px;
+				transition: all ease-in-out 0.3s;
+			}
 		}
 		.nav-link {
 			display: inline-flex;
@@ -30,7 +50,7 @@
 			&::before {
 				content: '';
 				position: absolute;
-				bottom: 0;
+				bottom: -1px;
 				left: 50%;
 				transform: translateX(-50%);
 				height: 3px;
