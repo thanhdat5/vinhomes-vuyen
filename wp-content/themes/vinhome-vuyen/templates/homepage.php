@@ -11,10 +11,10 @@ get_header();
 <div class="lav-page lav-homepage">
     <div class="lav-banner-slideshow">
         <div class="lav-banner-slide-item">
-            <img src="http://localhost/vinhomes-vuyen/wp-content/uploads/2024/03/He-thong-song-nuoc-man-co-the-tam-duoc-nam-om-cac-day-biet-thu.png" alt="" />
+            <img src="http://localhost/vinhomes-vuyen/wp-content/uploads/2024/03/88.jpeg" alt="" />
         </div>
         <div class="lav-banner-slide-item">
-            <img src="http://localhost/vinhomes-vuyen/wp-content/uploads/2024/03/88.jpeg" alt="" />
+            <img src="http://localhost/vinhomes-vuyen/wp-content/uploads/2024/03/He-thong-song-nuoc-man-co-the-tam-duoc-nam-om-cac-day-biet-thu.png" alt="" />
         </div>
         <div class="lav-banner-slide-item">
             <img src="http://localhost/vinhomes-vuyen/wp-content/uploads/2024/03/Vinhomes-Royal-Island-3.jpeg" alt="" />

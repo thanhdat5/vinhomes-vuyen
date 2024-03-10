@@ -69,16 +69,21 @@
 							}
 						}
 					}
-					.lav-amenities-item-title a {
+					.lav-amenities-item-title {
 						color: #162b75;
 						font-family: 'EB Garamond';
-						font-size: 24px;
-						font-style: normal;
+						font-size: 20px;
 						font-weight: 500;
 						line-height: 150%; /* 36px */
 						text-transform: uppercase;
-						flex-wrap: wrap;
-						display: flex;
+						a {
+							color: #162b75;
+							font-size: 24px;
+							font-weight: 500;
+							line-height: 150%; /* 36px */
+							flex-wrap: wrap;
+							display: flex;
+						}
 					}
 
 					@media only screen and (max-width: 992px) {
