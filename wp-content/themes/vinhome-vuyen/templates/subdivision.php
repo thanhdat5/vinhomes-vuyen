@@ -68,8 +68,6 @@ $post_type = get_field('post_type_slug');
                                         <!-- - <span><?php echo get_the_date($post->id); ?></span> -->
                                     </a>
                                     
-                                    <!-- Content -->
-                                    <?php the_content($post->id); ?>
                                 </div>
                             </div>
                         <?php endforeach; ?>

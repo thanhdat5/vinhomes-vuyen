@@ -10,9 +10,8 @@ $post_id = $args['post_id'];
         <?php
         $related = get_posts(
             array(
-                'post_type'     => 'post',
+                'post_type'     => 'phan-khu',
                 'numberposts'   => 3,
-                'category__in'  => wp_get_post_categories($post_id),
                 'post__not_in'  => array($post_id)
             )
         );

@@ -49,7 +49,7 @@ $page_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
 						<div class="lav-post-body"><?php the_content(); ?></div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-lg-4 ps-lg-5">
 					<?php get_sidebar(); ?>
 				</div>
 			</div>
