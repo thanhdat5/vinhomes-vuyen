@@ -9,6 +9,16 @@
 get_header();
 ?>
 <div class="lav-page lav-homepage">
+    <div class="lav-homepage-banner">
+        <div class="container">
+            <div class="row gx-lg-5">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="lav-banner-slideshow">
         <?php
         for ($x = 1; $x <= 5; $x++) {

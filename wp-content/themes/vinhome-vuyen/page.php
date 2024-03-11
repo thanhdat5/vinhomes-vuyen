@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Page (Default)
  * Description: Page template with Sidebar on the left side.
@@ -17,9 +18,20 @@ the_post();
 	?>
 
 	<!-- Body -->
-	<div class="lav-page-body">
-		<?php the_content(); ?>
+	<div class="lav-page-inner">
+		<div class="lav-post-content">
+			<div class="lav-page-body pt-0">
+				<div class="container">
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</div>
 	</div>
 </div><!-- /#post-<?php the_ID(); ?> -->
+
+<!-- Section Contact -->
+<?php
+get_template_part('template-parts/component', 'contact-form');
+?>
 <?php
 get_footer();

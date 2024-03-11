@@ -14,20 +14,20 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 150px;
-		height: 150px;
+		width: 120px;
+		height: 120px;
 		background: transparent;
 		border-radius: 50%;
 		text-align: center;
-		line-height: 150px;
+		line-height: 120px;
 		font-family: sans-serif;
 		font-size: 20px;
 		color: #dca447;
 		letter-spacing: 4px;
 		text-transform: uppercase;
 		text-shadow: 0 0 10px #dca447;
-		transform-origin: center;
-		transform: scale(0.8);
+		transition: all ease-in-out .3s;
+		animation: fadedd 2s linear infinite;
 		&:before {
 			content: '';
 			position: absolute;
@@ -64,8 +64,17 @@
 			}
 		}
 		img {
-			height: 70px;
+			height: 64px;
+			margin: 0 0 17px -17px;
 		}
+	}
+}
+@keyframes fadedd {
+	0%,100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
 	}
 }
 @keyframes animateC {
