@@ -10,27 +10,36 @@ get_header();
 ?>
 <div class="lav-page lav-homepage">
     <div class="lav-homepage-banner">
-        <div class="container">
-            <div class="row gx-lg-5">
-                <div class="col-lg-6"></div>
-                <div class="col-lg-6">
-                    
+        <div class="lav-homepage-banner-inner">
+            <div class="container">
+                <div class="row gx-lg-5 gy-4 gy-lg-0 justify-content-center">
+                    <div class="col-lg-5 pe-lg-4">
+                        <div class="lav-homepage-banner-info h-100">
+                            <h3><?php echo get_field('banner_title');?></h3>
+                            <div><?php echo get_field('banner_description');?></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-4">
+                        <div class="lav-homepage-banner-form h-100">
+                            <?php echo do_shortcode(get_field('banner_form_shortcode')) ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="lav-banner-slideshow">
-        <?php
-        for ($x = 1; $x <= 5; $x++) {
-            if (get_field('banner_slide_' . $x)) {
-        ?>
-                <div class="lav-banner-slide-item">
-                    <img src="<?php echo get_field('banner_slide_' . $x); ?>" alt="" />
-                </div>
-        <?php
+        <div class="lav-banner-slideshow">
+            <?php
+            for ($x = 1; $x <= 5; $x++) {
+                if (get_field('banner_slide_' . $x)) {
+            ?>
+                    <div class="lav-banner-slide-item">
+                        <img src="<?php echo get_field('banner_slide_' . $x); ?>" alt="" />
+                    </div>
+            <?php
+                }
             }
-        }
-        ?>
+            ?>
+        </div>
     </div>
     <!-- Description -->
     <div class="lav-page-description pb-5">
