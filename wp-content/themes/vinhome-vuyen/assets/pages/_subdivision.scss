@@ -17,10 +17,11 @@
 						align-items: flex-start;
 						gap: 10px;
 						width: 100%;
-						
+
 						&-image {
 							position: relative;
 							overflow: hidden;
+							width: 100%;
 
 							&::before {
 								background: linear-gradient(
@@ -28,7 +29,7 @@
 									fade_out(#fff, 1) 0%,
 									fade_out(#fff, 0.7) 100%
 								);
-								content: "";
+								content: '';
 								display: block;
 								height: 100%;
 								left: -75%;
@@ -38,14 +39,14 @@
 								width: 50%;
 								z-index: 2;
 							}
-						
+
 							&:hover,
 							&:focus {
 								&::before {
 									animation: shine 0.85s;
 								}
 							}
-						
+
 							@keyframes shine {
 								100% {
 									left: 125%;
@@ -80,8 +81,6 @@
 							@media (max-width: 475px) {
 								height: 180px;
 							}
-
-
 						}
 
 						a {
