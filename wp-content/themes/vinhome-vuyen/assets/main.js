@@ -25,10 +25,13 @@ function stickHeader() {
 		infinite: true,
 		slidesToScroll: 1,
 		slidesToShow: 3
-	  });
-	  AOS.init({
-		  duration: 400,
-	  });
+	});
+	AOS.init({
+		duration: 400,
+	});
+	setTimeout(() => {
+		$('.lav-loader').fadeOut(300);
+	}, 500)
 })(jQuery);
 
 $(window).on('scroll', function () {

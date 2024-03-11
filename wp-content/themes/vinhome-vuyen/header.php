@@ -8,6 +8,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="lav-loader">
+		<div class="ring">
+			<img src="<?php echo get_site_icon_url();?>" alt=""/>
+			<span></span>
+		</div>
+	</div>
 	<?php wp_body_open(); ?>
 	<a href="#main" class="visually-hidden-focusable"><?php esc_html_e('Skip to main content', 'vinhome-vuyen'); ?></a>
 
