@@ -17,7 +17,7 @@ $post_type = $args['post_type'] ?? 'tien-ich'
             setup_postdata($post);
             $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
     ?>
-            <div class="col col-xl-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="lav-amenities-item" data-aos="fade-up" data-aos-delay="<?php echo ($index_x % 3) * 100 ?>">
                     <!-- Image -->
                     <a href="<?php echo $image_url; ?>" data-lightbox="image-<?php echo '11' . $post->id; ?>" class="lav-amenities-item-img">
