@@ -27,14 +27,14 @@ get_header();
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h2><?php echo get_field('summary_title'); ?></h2>
-                    <p><?php echo get_field('summary_description'); ?></p>
+                    <h2 data-aos="fade-up"><?php echo get_field('summary_title'); ?></h2>
+                    <p data-aos="fade-up"><?php echo get_field('summary_description'); ?></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="lav-about-slideshow">
+    <div class="lav-about-slideshow" data-aos="zoom-in">
         <?php
         for ($x = 1; $x <= 5; $x++) {
             if (get_field('summary_image_' . $x)) {
@@ -50,26 +50,28 @@ get_header();
 
     <!-- Body -->
     <div class="lav-page-body pt-0">
-        <div class="lav-homepage-sect lav-homepage-overview">
+        <div class="lav-homepage-sect lav-homepage-overview overflow-hidden">
             <div class="container">
                 <div class="row mb-5 align-items-center">
                     <div class="col-lg-6 pe-lg-5">
-                        <img src="<?php echo get_field('overview_image'); ?>" alt="" class="w-100" />
+                        <img data-aos="fade-right" src="<?php echo get_field('overview_image'); ?>" alt="" class="w-100" />
                     </div>
                     <div class="col-lg-6">
-                        <h3 class="lav-homepage-title"><?php echo get_field('overview_title'); ?></h3>
-                        <?php echo get_field('overview_description'); ?>
+                        <div data-aos="fade-left">
+                            <h3 class="lav-homepage-title"><?php echo get_field('overview_title'); ?></h3>
+                            <div><?php echo get_field('overview_description'); ?></div>
+                        </div>
                     </div>
                 </div>
 
-                <?php echo get_field('overview_details'); ?>
+                <div data-aos="flip-up"><?php echo get_field('overview_details'); ?></div>
             </div>
         </div>
 
         <div class="lav-homepage-sect lav-homepage-location">
             <div class="container">
-                <h3 class="lav-homepage-title text-center"><?php echo get_field('location_title'); ?></h3>
-                <div class="mb-4">
+                <h3 data-aos="fade-up" class="lav-homepage-title text-center"><?php echo get_field('location_title'); ?></h3>
+                <div data-aos="fade-up" class="mb-4">
                     <?php echo get_field('location_details'); ?>
                 </div>
             </div>
@@ -78,12 +80,14 @@ get_header();
         <div class="lav-homepage-sect lav-homepage-amenities lav-amenities">
             <div class="lav-page-body">
                 <div class="container">
-                    <h3 class="lav-homepage-title text-center"><?php echo get_field('amenities_title'); ?></h3>
-                    <!-- Amenities List -->
-                    <?php
-                    get_template_part('template-parts/component', 'list-amenities');
-                    ?>
-                    <div class="text-center mt-3">
+                    <h3 data-aos="fade-up" class="lav-homepage-title text-center"><?php echo get_field('amenities_title'); ?></h3>
+                    <div data-aos="fade-up">
+                        <!-- Amenities List -->
+                        <?php
+                        get_template_part('template-parts/component', 'list-amenities');
+                        ?>
+                    </div>
+                    <div data-aos="fade-up" class="text-center mt-3">
                         <a href="<?php echo get_field('detail_url'); ?>" class="research-btn">
                             <span><?php esc_html_e('Tìm hiểu thêm', 'vinhome-vuyen'); ?></span>
                         </a>
@@ -96,12 +100,14 @@ get_header();
         <div class="lav-homepage-products lav-products">
             <div class="lav-page-body">
                 <div class="container">
-                    <h3 class="lav-homepage-title text-center"><?php echo get_field('products_title'); ?></h3>
+                    <h3 data-aos="fade-up" class="lav-homepage-title text-center"><?php echo get_field('products_title'); ?></h3>
                 </div>
-                <!-- Products List -->
-                <?php
-                get_template_part('template-parts/component', 'list-product');
-                ?>
+                <div>
+                    <!-- Products List -->
+                    <?php
+                    get_template_part('template-parts/component', 'list-product');
+                    ?>
+                </div>
             </div>
         </div>
 
@@ -109,11 +115,13 @@ get_header();
         <div class="lav-homepage-subdivision lav-subdivision">
             <div class="lav-page-body pb-0">
                 <div class="container pb-0">
-                    <h3 class="lav-homepage-title text-center"><?php echo get_field('subdivision_title'); ?></h3>
-                    <!-- Subdivision List -->
-                    <?php
-                    get_template_part('template-parts/component', 'list-subdivision');
-                    ?>
+                    <h3 data-aos="fade-up" class="lav-homepage-title text-center"><?php echo get_field('subdivision_title'); ?></h3>
+                    <div>
+                        <!-- Subdivision List -->
+                        <?php
+                        get_template_part('template-parts/component', 'list-subdivision');
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

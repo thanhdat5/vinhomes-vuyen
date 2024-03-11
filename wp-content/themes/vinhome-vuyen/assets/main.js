@@ -26,6 +26,9 @@ function stickHeader() {
 		slidesToScroll: 1,
 		slidesToShow: 3
 	  });
+	  AOS.init({
+		  duration: 400,
+	  });
 })(jQuery);
 
 $(window).on('scroll', function () {

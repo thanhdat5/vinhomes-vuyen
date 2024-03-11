@@ -3,9 +3,10 @@
  * The template for displaying content in the index.php template.
  */
 $class_name = $args['class_name'] ?? 'col-lg-4 col-md-6';
+$delay = $args['delay'] ?? 0;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($class_name); ?>>
-	<div class="lav-archive-item">
+	<div class="lav-archive-item" data-aos="fade-up" data-aos-delay="<?php echo $delay;?>">
 		<!-- Image -->
 		<a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="lav-archive-item-image">
 			<?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>

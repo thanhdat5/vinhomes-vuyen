@@ -98,26 +98,6 @@
 				}
 			}
 		}
-		.research-btn {
-			color: var(--White-Color, #fff);
-			font-family: Montserrat;
-			font-size: 13px;
-			font-weight: 500;
-			line-height: 150%; /* 19.5px */
-			text-transform: uppercase;
-			padding: 10px 24px;
-			background: var(--Accent-Color, #dca447);
-			display: inline-flex;
-			padding: 10px 24px;
-			justify-content: center;
-			align-items: center;
-			width: fit-content;
-
-			&:hover {
-				opacity: 0.8;
-				cursor: pointer;
-			}
-		}
 	}
 	&-amenities {
 		background-color: #fcfcfc;
@@ -135,5 +115,25 @@
 	&-subdivision {
 		background-color: #fcfcfc;
 		padding: 80px 0;
+	}
+	.research-btn {
+		color: var(--White-Color, #fff);
+		font-family: Montserrat;
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 150%; /* 19.5px */
+		text-transform: uppercase;
+		padding: 10px 24px;
+		background: var(--Accent-Color, #dca447);
+		display: inline-flex;
+		padding: 10px 24px;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+
+		&:hover {
+			opacity: 0.8;
+			cursor: pointer;
+		}
 	}
 }

@@ -29,12 +29,17 @@ $title = $args['title'] ?? esc_html__('TIN TỨC DỰ ÁN', 'vinhome-vuyen');
                 'order'             => 'DESC',
             ));
             if ($posts) : ?>
-                <?php foreach ($posts as $post) :
+            <?php
+                $index_x = 0;
+                foreach ($posts as $post) :
                     setup_postdata($post);
-                    get_template_part('template-parts/component', 'archive-item');
-                endforeach; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
+                    get_template_part('template-parts/component', 'archive-item', array(
+                        "delay" => (($index_x % 3) * 100)
+                    ));
+                    $index_x++;
+                endforeach;
+                wp_reset_postdata();
+            endif; ?>
         </div>
     </div>
 </div>

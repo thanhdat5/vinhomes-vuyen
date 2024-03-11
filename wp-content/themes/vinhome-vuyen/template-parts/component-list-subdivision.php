@@ -11,13 +11,14 @@ $post_type = $args['post_type'] ?? 'phan-khu'
         'orderby'           => 'meta_value',
         'order'             => 'ASC'
     ));
-    if ($posts) : ?>
-        <?php foreach ($posts as $post) :
+    if ($posts) :
+        $index_x = 0;
+        foreach ($posts as $post) :
             setup_postdata($post)
-        ?>
+    ?>
             <!-- TODO -->
             <div class="col col-md-6 col-sm-12">
-                <div class="lav-subdivision-item">
+                <div class="lav-subdivision-item" data-aos="zoom-in" data-aos-delay="<?php echo (($index_x % 2) * 100);?>">
                     <!-- Image -->
                     <?php
                     $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
@@ -37,7 +38,9 @@ $post_type = $args['post_type'] ?? 'phan-khu'
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
-        <?php wp_reset_postdata(); ?>
+        <?php
+            $index_x++;
+        endforeach;
+        wp_reset_postdata(); ?>
     <?php endif; ?>
 </div>

@@ -2,7 +2,7 @@
 $post_type = $args['post_type'] ?? 'san-pham'
 ?>
 <!-- Items list -->
-<div>
+<div class="overflow-hidden">
     <?php
     $posts = get_posts(
         array(
@@ -13,43 +13,46 @@ $post_type = $args['post_type'] ?? 'san-pham'
             'order' => 'ASC'
         )
     );
-    if ($posts) : ?>
-        <?php foreach ($posts as $index => $post) :
-            setup_postdata($post)
-        ?>
+    if ($posts) :
+        $index_x = 0;
+        foreach ($posts as $index => $post) :
+            setup_postdata($post);
+            $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
+    ?>
             <div class="lav-products-item <?php echo (count($posts) - 2 <= $index) ? 'last' : '' ?>">
                 <div class="container">
                     <div class="row equal">
                         <!-- Image -->
-                        <?php
-                        $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
-                        ?>
-
                         <div class="col-12 col-md-6 lav-products-item-left <?php echo ($index % 2 != 0) ? 'odd' : '' ?>">
-                            <img class="lav-products-item-img <?php echo ($index % 2 != 0) ? 'right' : '' ?>" src="<?php echo $image_url; ?>" alt="" />
+                            <img data-aos="<?php echo ($index_x % 2 == 0) ? 'fade-right' : 'fade-left' ?>" class="lav-products-item-img <?php echo ($index % 2 != 0) ? 'right' : '' ?>" src="<?php echo $image_url; ?>" alt="" />
                         </div>
                         <div class="col-12 col-md-6 lav-products-item-right <?php echo ($index % 2 != 0) ? 'even' : '' ?>">
-                            <a href="<?php echo get_field('detail_url'); ?>" class="lav-products-item-title">
-                                <?php echo get_the_title($post->id); ?>
-                                <!-- - <span><?php echo get_the_date($post->id); ?></span> -->
-                            </a>
-
-                            <!-- Content -->
-                            <div class="lav-products-item-desc">
-                                <?php the_content($post->id); ?>
-                            </div>
-
-                            <div class="lav-products-item-bottom">
-                                <a href="<?php echo get_field('detail_url'); ?>" class="research-btn">
-                                    <span><?php esc_html_e('Tìm hiểu thêm', 'vinhome-vuyen'); ?></span>
+                            <div data-aos="<?php echo ($index_x % 2 == 0) ? 'fade-left' : 'fade-right' ?>">
+                                <a href="<?php echo get_field('detail_url'); ?>" class="lav-products-item-title">
+                                    <?php echo get_the_title($post->id); ?>
+                                    <!-- - <span><?php echo get_the_date($post->id); ?></span> -->
                                 </a>
+
+                                <!-- Content -->
+                                <div class="lav-products-item-desc">
+                                    <?php the_content($post->id); ?>
+                                </div>
+
+                                <div class="lav-products-item-bottom">
+                                    <a href="<?php echo get_field('detail_url'); ?>" class="research-btn">
+                                        <span><?php esc_html_e('Tìm hiểu thêm', 'vinhome-vuyen'); ?></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <!-- Link | Title | Date -->
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
-        <?php wp_reset_postdata(); ?>
+        <?php
+            $index_x++;
+        endforeach;
+        wp_reset_postdata();
+        ?>
     <?php endif; ?>
 </div>
