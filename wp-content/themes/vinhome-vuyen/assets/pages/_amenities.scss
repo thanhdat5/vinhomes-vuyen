@@ -2,15 +2,19 @@
 	padding: 0px;
 	.lav-page-body {
 		padding: 0px;
+		img {
+			width: 100%;
+			height: auto;
+		}
 		.container {
 			.lav-amenities-list {
 				.lav-amenities-item {
 					padding: 0px;
 					width: 100%;
 					margin-bottom: 40px;
-					position: relative;
-					overflow: hidden;
 					.lav-amenities-item-img {
+						position: relative;
+						overflow: hidden;
 						display: block;
 						padding-bottom: 10px;
 
