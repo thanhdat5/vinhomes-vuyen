@@ -1,13 +1,19 @@
 .lav-archive-item {
 	height: 100%;
 	&-image {
-		border: 1px solid var(--BG-Accent-Color, #E5D2AE);
+		border: 1px solid var(--BG-Accent-Color, #e5d2ae);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		height: 240px;
 		overflow: hidden;
 		margin-bottom: 16px;
+		@media (max-width: 1199px) {
+			height: 200px;
+		}
+		@media (max-width: 991px) {
+			height: 180px;
+		}
 		&:hover {
 			img {
 				transform: scale(1.1);
@@ -52,7 +58,7 @@
 			transition: all ease-in-out 0.3s;
 			height: calc(16px * 1.5 * 2);
 			&:hover {
-                color: var(--Accent-Color, #dca447);
+				color: var(--Accent-Color, #dca447);
 				// color: var(--Primary-Color, #162b75);
 			}
 		}

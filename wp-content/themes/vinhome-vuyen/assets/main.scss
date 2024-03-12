@@ -26,7 +26,7 @@
 		letter-spacing: 4px;
 		text-transform: uppercase;
 		text-shadow: 0 0 10px #dca447;
-		transition: all ease-in-out .3s;
+		transition: all ease-in-out 0.3s;
 		animation: fadedd 2s linear infinite;
 		&:before {
 			content: '';
@@ -70,7 +70,8 @@
 	}
 }
 @keyframes fadedd {
-	0%,100% {
+	0%,
+	100% {
 		opacity: 1;
 	}
 	50% {
@@ -320,7 +321,12 @@ body {
 	}
 }
 main {
+	overflow-x: hidden;
 	padding-top: 90px;
+	.alignnone {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
 }
 .lav-widget-title {
 	color: var(--Primary-Color, #162b75);
@@ -361,6 +367,12 @@ main {
 	&-description {
 		padding: 80px 0 100px;
 		text-align: center;
+		@media (max-width: 1199px) {
+			padding: 40px 0 80px;
+		}
+		@media (max-width: 576px) {
+			padding-bottom: 40px;
+		}
 		h2 {
 			color: var(--Primary-Color, #162b75);
 			font-family: 'EB Garamond';
@@ -369,10 +381,22 @@ main {
 			line-height: 130%; /* 130px */
 			text-transform: uppercase;
 			margin-bottom: 24px;
+			@media (max-width: 1199px) {
+				font-size: 40px;
+			}
+			@media (max-width: 991px) {
+				font-size: 32px;
+			}
+			@media (max-width: 576px) {
+				font-size: 28px;
+			}
 		}
 	}
 	&-body {
 		padding: 80px 0;
+	}
+	img {
+		max-width: 100%;
 	}
 }
 @import './pages/_not-found';

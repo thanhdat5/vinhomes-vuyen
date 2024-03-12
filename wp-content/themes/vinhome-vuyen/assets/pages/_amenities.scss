@@ -12,7 +12,12 @@
 					overflow: hidden;
 					.lav-amenities-item-img {
 						display: block;
-						padding-bottom: 10px;
+						height: 240px;
+						overflow: hidden;
+						margin-bottom: 10px;
+						@media (max-width: 991px) {
+							height: 200px;
+						}
 
 						&::before {
 							position: absolute;
@@ -54,20 +59,9 @@
 						}
 
 						img {
-							height: 240px;
 							width: 100%;
-
-							@media only screen and (max-width: 1200px) {
-								height: 222px;
-							}
-
-							@media only screen and (max-width: 992px) {
-								height: 210px;
-							}
-
-							@media only screen and (max-width: 992px) {
-								height: 323px;
-							}
+							height: 100%;
+							object-fit: cover;
 						}
 					}
 					.lav-amenities-item-title {
@@ -77,6 +71,10 @@
 						font-weight: 500;
 						line-height: 150%; /* 36px */
 						text-transform: uppercase;
+						@media (max-width: 576px) {
+							font-size: 18px;
+							line-height: 130%;
+						}
 						a {
 							color: #162b75;
 							font-size: 24px;

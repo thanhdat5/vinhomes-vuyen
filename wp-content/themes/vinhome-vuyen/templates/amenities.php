@@ -50,7 +50,7 @@ $post_type = get_field('post_type_slug');
 
     <div class="lav-products">
         <div class="container">
-            <h2 class="my-5 text-center text-warning">
+            <h2 class="my-5 mb-lg-5 mb-3 text-center text-warning">
                 <b><?php esc_html_e('CÁC SẢN PHẨM TẠI VINHOMES VŨ YÊN', 'vinhome-vuyen'); ?></b>
             </h2>
         </div>

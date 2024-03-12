@@ -11,7 +11,7 @@ $contact_form_image = get_theme_mod('lav_contact_image', '');
     <div class="lav-sect-contact-inner">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-6">
+                <div class="col-xl-5 col-lg-6 pe-lg-5">
                     <div data-aos="fade-right">
                         <?php echo do_shortcode($contact_form_shortcode) ?>
                     </div>

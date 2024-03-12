@@ -64,21 +64,21 @@
 							<?php
 							} ?>
 						</div>
-						<div class="col-xl-2">
+						<div class="col-xl-2 col-lg-4">
 							<?php
 							if (is_active_sidebar('footer_column_2_area')) {
 								dynamic_sidebar('footer_column_2_area');
 							}
 							?>
 						</div>
-						<div class="col-xl-3">
+						<div class="col-xl-3 col-lg-4">
 							<?php
 							if (is_active_sidebar('footer_column_3_area')) {
 								dynamic_sidebar('footer_column_3_area');
 							}
 							?>
 						</div>
-						<div class="col-xl-3">
+						<div class="col-xl-3 col-lg-4">
 							<?php
 							if (is_active_sidebar('footer_column_4_area')) {
 								dynamic_sidebar('footer_column_4_area');

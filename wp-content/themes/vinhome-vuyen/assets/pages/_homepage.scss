@@ -1,7 +1,6 @@
 .lav-homepage {
 	margin-top: -90px;
 	position: relative;
-	min-height: 550px;
 	.lav-banner-slideshow {
 		overflow: hidden;
 		.lav-banner-slide-item {
@@ -15,6 +14,9 @@
 			@media (max-width: 1199px) {
 				height: 600px;
 			}
+			@media (max-width: 576px) {
+				height: 900px;
+			}
 		}
 		.slick-dots {
 			bottom: 30px;
@@ -27,6 +29,7 @@
 
 	.lav-about-slideshow {
 		overflow: hidden;
+		margin-bottom: 0;
 		.slick-list {
 			padding: 0 !important;
 			margin-left: -60px;
@@ -42,6 +45,14 @@
 			transition: all ease-in-out 0.3s;
 			padding: 140px 0;
 			height: 550px;
+			@media (max-width: 1199px) {
+				height: 450px;
+				padding: 100px 0;
+			}
+			@media (max-width: 576px) {
+				height: 300px;
+				padding: 80px 0;
+			}
 			&.slick-center {
 				opacity: 1;
 				transform: scale(2) !important;
@@ -52,6 +63,9 @@
 	}
 	&-sect {
 		padding: 80px 0;
+		@media (max-width: 1199px) {
+			padding: 40px 0;
+		}
 	}
 	&-title {
 		color: #162b75;
@@ -61,11 +75,22 @@
 		line-height: 150%;
 		text-transform: uppercase;
 		margin-bottom: 40px;
+		@media (max-width: 1199px) {
+			font-size: 32px;
+		}
+		@media (max-width: 991px) {
+			font-size: 28px;
+			margin-bottom: 24px;
+		}
 	}
 	&-banner {
+		min-height: 600px;
 		position: relative;
+		@media (max-width: 576px) {
+			min-height: 900px;
+		}
 		&-inner {
-			padding: 100px 0;
+			padding: 120px 0 60px 0;
 			position: absolute;
 			width: 100%;
 			top: 50%;
@@ -80,6 +105,9 @@
 				text-transform: uppercase;
 				margin-bottom: 24px;
 				color: #fff;
+				@media (max-width: 991px) {
+					font-size: 18px;
+				}
 			}
 		}
 		&-info {
@@ -105,6 +133,14 @@
 					border-radius: 0;
 					height: 45px;
 					box-shadow: none;
+					@media (max-width: 991px) {
+						height: 40px;
+					}
+				}
+				.btn {
+					@media (max-width: 991px) {
+						height: 50px;
+					}
 				}
 				> p {
 					&:last-child {
@@ -130,6 +166,9 @@
 	&-location {
 		background-color: #162b75;
 		color: #fff;
+		@media (max-width: 576px) {
+			padding-bottom: 0;
+		}
 		.lav-homepage-title {
 			color: #fff;
 		}
@@ -141,9 +180,20 @@
 		.gallery {
 			display: flex;
 			column-gap: 24px;
+			@media (max-width: 576px) {
+				flex-wrap: wrap;
+			}
 			.gallery-item {
 				height: 250px;
 				overflow: hidden;
+				@media (max-width: 991px) {
+					height: 150px;
+				}
+				@media (max-width: 576px) {
+					width: 100%;
+					max-width: 100%;
+					height: auto;
+				}
 				a,
 				.gallery-icon {
 					display: block;
@@ -169,6 +219,13 @@
 				font-size: 16px;
 				text-transform: none;
 				text-align: center;
+			}
+		}
+	}
+	&-products {
+		.lav-page-body {
+			@media (max-width: 991px) {
+				padding-bottom: 0 !important;
 			}
 		}
 	}

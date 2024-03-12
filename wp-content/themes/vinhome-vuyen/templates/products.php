@@ -37,7 +37,7 @@ $post_type = get_field('post_type_slug');
     </div>
 
     <!-- Body -->
-    <div class="lav-page-body">
+    <div class="lav-page-body pt-0">
         <!-- Products List -->
         <?php
         get_template_part('template-parts/component', 'list-product', array(

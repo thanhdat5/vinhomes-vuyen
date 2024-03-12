@@ -13,13 +13,13 @@ get_header();
         <div class="lav-homepage-banner-inner">
             <div class="container">
                 <div class="row gx-lg-5 gy-4 gy-lg-0 justify-content-center">
-                    <div class="col-lg-5 pe-lg-4">
+                    <div class="col-lg-5 col-md-6 pe-lg-4">
                         <div class="lav-homepage-banner-info h-100">
                             <h3><?php echo get_field('banner_title');?></h3>
                             <div><?php echo get_field('banner_description');?></div>
                         </div>
                     </div>
-                    <div class="col-lg-6 ps-lg-4">
+                    <div class="col-lg-6 col-md-6 ps-lg-4">
                         <div class="lav-homepage-banner-form h-100">
                             <?php echo do_shortcode(get_field('banner_form_shortcode')) ?>
                         </div>
@@ -68,14 +68,14 @@ get_header();
     </div>
 
     <!-- Body -->
-    <div class="lav-page-body pt-0">
+    <div class="lav-page-body py-0">
         <div class="lav-homepage-sect lav-homepage-overview overflow-hidden">
             <div class="container">
-                <div class="row mb-5 align-items-center">
-                    <div class="col-lg-6 pe-lg-5">
+                <div class="row gy-5 mb-xl-5 mb-4 align-items-center">
+                    <div class="col-lg-6 pe-lg-5 order-lg-1 order-2">
                         <img data-aos="fade-right" src="<?php echo get_field('overview_image'); ?>" alt="" class="w-100" />
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 order-lg-2 order-1">
                         <div data-aos="fade-left">
                             <h3 class="lav-homepage-title"><?php echo get_field('overview_title'); ?></h3>
                             <div><?php echo get_field('overview_description'); ?></div>

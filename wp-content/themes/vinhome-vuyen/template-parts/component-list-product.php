@@ -20,13 +20,14 @@ $post_type = $args['post_type'] ?? 'san-pham'
             $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->id), 'full')[0];
     ?>
             <div class="lav-products-item <?php echo (count($posts) - 2 <= $index) ? 'last' : '' ?>">
+                <div class="lav-products-item-bg <?php echo ($index_x % 2 == 0) ? 'left' : 'right' ?>">
+                    <img data-aos="<?php echo ($index_x % 2 == 0) ? 'fade-right' : 'fade-left' ?>" class="lav-products-item-img <?php echo ($index % 2 != 0) ? 'right' : '' ?>" src="<?php echo $image_url; ?>" alt="" />
+                </div>
                 <div class="container">
-                    <div class="row equal">
+                    <div class="row">
                         <!-- Image -->
-                        <div class="col-12 col-md-6 lav-products-item-left <?php echo ($index % 2 != 0) ? 'odd' : '' ?>">
-                            <img data-aos="<?php echo ($index_x % 2 == 0) ? 'fade-right' : 'fade-left' ?>" class="lav-products-item-img <?php echo ($index % 2 != 0) ? 'right' : '' ?>" src="<?php echo $image_url; ?>" alt="" />
-                        </div>
-                        <div class="col-12 col-md-6 lav-products-item-right <?php echo ($index % 2 != 0) ? 'even' : '' ?>">
+                        <div class="col-12 col-lg-6 <?php echo ($index % 2 == 0) ? '' : 'order-1 order-lg-2' ?>"></div>
+                        <div class="col-12 col-lg-6 lav-products-item-right <?php echo ($index % 2 != 0) ? 'order-2 order-lg-1 pe-lg-5' : 'ps-lg-5' ?>">
                             <div data-aos="<?php echo ($index_x % 2 == 0) ? 'fade-left' : 'fade-right' ?>">
                                 <a href="<?php echo get_field('detail_url'); ?>" class="lav-products-item-title">
                                     <?php echo get_the_title($post->id); ?>

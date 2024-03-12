@@ -14,6 +14,9 @@
 	}
 	&-inner {
 		padding: 90px 0 60px;
+		@media (max-width: 1199px) {
+			padding: 40px 0 30px;
+		}
 		h3 {
 			color: var(--Primary-Color, #162b75);
 			font-family: 'EB Garamond';
@@ -23,12 +26,15 @@
 			letter-spacing: -0.64px;
 			text-transform: uppercase;
 			margin-bottom: 16px;
+			@media (max-width: 1199px) {
+				font-size: 28px;
+			}
 		}
 		p {
 			margin-bottom: 40px;
-            &:last-child{
-                margin-bottom: 0;
-            }
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 		.form-group {
 			margin-bottom: 20px;
@@ -47,9 +53,9 @@
 				}
 			}
 		}
-        .btn{
-            margin-top: 20px;
-        }
+		.btn {
+			margin-top: 20px;
+		}
 
 		@media only screen and (max-width: 991px) {
 			padding: 32px 0;
