@@ -20,13 +20,13 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'vinhomes_vuyen_db' );
+define( 'DB_NAME', 'hipla618_vuyen' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'hipla618_vuyen' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', '$P$BQSICcDaQCUuFDHOJ7.mRUem6tGR4o1' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
